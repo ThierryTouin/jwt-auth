@@ -32,6 +32,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         authenticationManagerBuilder.userDetailsService(userDetailsService);
     }
 
+
+    @Bean
+    public AuthenticationManager customAuthenticationManager() throws Exception {
+      return authenticationManager();
+    }
+    
     @Bean
     public JwtAuthenticationTokenFilter authenticationTokenFilterBean() {
         return new JwtAuthenticationTokenFilter();

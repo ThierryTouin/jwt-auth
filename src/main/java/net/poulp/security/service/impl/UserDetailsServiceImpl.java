@@ -20,8 +20,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Collection<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority("ADMIN"));
 
-		return new UserDto(1L, "user", "password", "jwt@ippon.fr",
+		return new UserDto(1L, "user", "{noop}password", "jwt@ippon.fr",
 				authorities, true, LocalDate.now(), "saltquisertarien");
+
 	}
 
 }
